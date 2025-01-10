@@ -1,0 +1,440 @@
+body
+{
+  /* custom variables */
+  --backgroundColor               :#FBF8EF; /*DEEFE7*/ /*F2E6DF*/
+  --textColor                     :#181C14;
+  --textColor-filter              : brightness(0) saturate(100%) invert(6%) sepia(43%) saturate(408%) hue-rotate(47deg) brightness(94%) contrast(90%);
+  --textColorHover                :#3C3D37;
+  --textColorHover-filter         : brightness(0) saturate(100%) invert(24%) sepia(3%) saturate(1350%) hue-rotate(30deg) brightness(89%) contrast(93%); /*from https://isotropic.co/tool/hex-color-to-css-filter/ */
+  --accentColor                   :#697565; /*#BACDD9*/ /*ABD1BE*/
+  --negativeColor                 :#BF3C30;
+  --negativeColorSemiTransparent  :#BF3C3011;
+  --componentBackgroundColor      : transparent; /*#F2EDEB*/
+  --componentBackgroundColorHover : transparent; /*#F2EDEB*/
+  --fontSizeSmall                 : 16px;
+  --defaultComponentPadding       : 5px 10px;
+  --defaultComponentBorder        : 2px solid var(--accentColor);
+  --componentBorderNegative       : 2px solid var(--negativeColor);
+  --defaultComponentBorderRadius  : 2px;
+
+  --blue                          : #7996B3;
+	--green                         : #759F87;
+	--pink                          : #D18794;
+	--purple                        : #9586AC;
+	--yellow                        : #EFC16D;
+
+  background      : var(--backgroundColor);
+  width           : 100%;
+  height          : 100%;
+  display         : flex;
+  flex-direction  : column;
+  margin          : 0;
+  visibility      : hidden;
+
+  font-family     : Roboto, sans-serif;
+  font-weight     : 400;
+  font-size       : var(--fontSizeSmall);
+  color           : var(--textColor);
+  text-align      : center;
+}
+
+#footer
+{
+  align-self      : flex-end;
+  padding-top     : 25px;
+}
+
+#contentContainer
+{
+  position        : relative;
+  flex            : 1;
+  display         : flex;
+  flex-direction  : column;
+  align-items     : stretch;
+  justify-content : center;
+  padding         : 25px 20vw;
+}
+
+#content
+{
+  position: relative;
+}
+
+h1 
+{
+  margin-top      : 25px;
+}
+
+h2 
+{
+  margin-top      : 40px;
+}
+
+p
+{
+  overflow-wrap   : break-word;
+}
+
+a,a:visited
+{
+  color           : var(--accentColor);
+}
+
+button,input,.button {
+  padding         : var(--defaultComponentPadding);
+  margin-left     : 10px;
+  margin-right    : 10px;
+  outline         : none;
+  background-color: var(--componentBackgroundColor);
+  color           : var(--textColor);
+  border          : var(--defaultComponentBorder);
+  border-radius   : var(--defaultComponentBorderRadius);
+  font-size       : var(--fontSizeSmall);
+  text-decoration : none;
+  display         : flex;
+  flex-direction  : row;
+  align-items     : center;
+}
+
+button:hover,.button:hover {
+  background-color: var(--componentBackgroundColorHover);
+  color           : var(--textColorHover);
+}
+
+.buttonIcon
+{
+  background-size   : contain;
+  background-repeat : no-repeat;
+  width             : 20px;
+  height            : 20px;
+  margin-right      : 5px;
+  filter            : var(--textColor-filter);
+}
+
+/* ---------------------  CONFETTI  --------------------- */
+#confettiContainer
+{
+  position                  : absolute;
+  left                      : 0px; 
+  right                     : 0px; 
+  top                       : 0px; 
+  bottom                    : 0px; 
+  overflow                  : hidden;
+}
+
+.confetti {
+	position                  : absolute;
+  opacity                   : 0.8;
+	width                     : 5px;
+	height                    : 10px;
+	top                       : -50px;
+  left                      : 50vw;
+  animation-timing-function: linear;
+  animation-iteration-count : infinite;
+}
+
+@keyframes confettiFall {
+	0% {top:-50px; transform: rotate(0deg) rotateY(-90deg);}
+	50% {top:50%; transform: rotate(360deg) rotateY(180deg);}
+	100% {top:calc(100% + 50px); transform: rotate(0deg) rotateY(-90deg);}
+}
+
+@keyframes confettiFall2 {
+	0% {top:-50px; transform: rotate(0deg) rotateY(90deg);}
+	50% {top:50%; transform: rotate(-360deg) rotateY(-180deg);}
+	100% {top:calc(100% + 50px); transform: rotate(0deg) rotateY(90deg);}
+}
+
+/* ---------------------   PHOTOS   --------------------- */
+#headerPhotoContainer
+{
+  margin-top      : -50px;
+  background      : #fff;
+  padding         : 3px;
+  height          : 40vw;
+  box-shadow      : 0 3px 10px rgba(0,0,0,0.3);
+  transform       : rotate(-2deg);
+}
+
+#headerPhoto
+{
+  background-size     : cover;
+  background-position : 50% 65%;
+  width               : 100%;
+  height              : 100%;
+}
+
+.polaroid
+{
+  background      : #fff;
+  padding         : 3px;
+  padding-bottom  : 20px;
+  box-shadow      : 0 3px 10px rgba(0,0,0,0.3);
+  width           : 110px;
+  height          : 125px;
+}
+
+.polaroidImage
+{
+  width           : 100%;
+  height          : 100%;
+  background-size : cover;
+}
+
+#photoContainer
+{
+  position        : absolute;
+  top             : 0px;
+  left            : 0px;
+  right           : 0px;
+  bottom          : 0px;
+  overflow        : hidden;
+}
+
+#photo1
+{
+  position            : absolute;
+  right               : calc(-60px + 3vw);
+  top                 : 25px;
+  transform           : rotate(-15deg);
+}
+
+#photo2
+{
+  position            : absolute;
+  right               : calc(-75px + 3vw);
+  top                 : 150px;
+  transform           : rotate(20deg);
+}
+
+#photo3
+{
+  position            : absolute;
+  right               : calc(-55px + 3vw);
+  top                 : 280px;
+  transform           : rotate(-8deg);
+}
+
+#photo4
+{
+  position            : absolute;
+  right               : calc(-65px + 3vw);
+  top                 : 420px;
+  transform           : rotate(9deg);
+}
+
+#photo5
+{
+  position        : absolute;
+  right           : calc(-55px + 3vw);
+  top             : 535px;
+  transform       : rotate(-4deg);
+}
+
+#photo6
+{
+  position        : absolute;
+  right           : calc(-65px + 3vw);
+  top             : 670px;
+  transform       : rotate(8deg);
+}
+
+#photo7
+{
+  position        : absolute;
+  right           : calc(-60px + 3vw);
+  top             : 800px;
+  transform       : rotate(-12deg);
+}
+
+#photo8
+{
+  position        : absolute;
+  right           : calc(-55px + 3vw);
+  top             : 940px;
+  transform       : rotate(2deg);
+}
+
+#photo9
+{
+  position        : absolute;
+  right           : calc(-55px + 3vw);
+  top             : 1080px;
+  transform       : rotate(-9deg);
+}
+
+#photo10
+{
+  position        : absolute;
+  left            : calc(-45px + 3vw);
+  top             : 30px;
+  transform       : rotate(3deg);
+}
+
+#photo11
+{
+  position        : absolute;
+  left            : calc(-60px + 3vw);
+  top             : 155px;
+  transform       : rotate(-6deg);
+}
+
+#photo12
+{
+  position        : absolute;
+  left            : calc(-55px + 3vw);
+  top             : 300px;
+  transform       : rotate(3deg);
+}
+
+#photo13
+{
+  position        : absolute;
+  left            : calc(-60px + 3vw);
+  top             : 410px;
+  transform       : rotate(-8deg);
+}
+
+#photo14
+{
+  position        : absolute;
+  left            : calc(-55px + 3vw);
+  top             : 520px;
+  transform       : rotate(5deg);
+}
+
+#photo15
+{
+  position        : absolute;
+  left            : calc(-55px + 3vw);
+  top             : 660px;
+  transform       : rotate(10deg);
+}
+
+#photo16
+{
+  position        : absolute;
+  left            : calc(-65px + 3vw);
+  top             : 780px;
+  transform       : rotate(-10deg);
+}
+
+#photo17
+{
+  position        : absolute;
+  left            : calc(-65px + 3vw);
+  top             : 900px;
+  transform       : rotate(4deg);
+}
+
+#photo18
+{
+  position        : absolute;
+  left            : calc(-55px + 3vw);
+  top             : 1020px;
+  transform       : rotate(-3deg);
+}
+
+#photo19
+{
+  position        : absolute;
+  left            : calc(-65px + 3vw);
+  top             : 1140px;
+  transform       : rotate(8deg);
+}
+
+/* --------------------- PASSWORD DIALOG --------------------- */
+#decryptionDialog
+{
+  position        : fixed;
+  left            : 0px;
+  top             : 0px;
+  right           : 0px;
+  bottom          : 0px;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter : blur(4px);
+  display         : flex;
+  flex-direction  : column;
+  align-items     : center;
+  justify-content : center;
+
+  /*display         : none; /* TODO: remove this */
+}
+
+#decryptionDialogBox
+{
+  padding         : 30px;
+  border-radius   : 5px;
+  min-width       : 240px;
+  background-color: var(--backgroundColor);
+  box-shadow      : 5px 5px 5px rgba(0, 0, 0, 0.2);
+  display         : flex;
+  flex-direction  : column;
+  align-items     : center;
+  justify-content : center;
+}
+
+#decryptionDialogHeader
+{
+  font-size       : 18px;
+}
+
+#decryptionDialogHeader.incorrect
+{
+  color         : var(--negativeColor);
+}
+
+#decryptionField
+{
+  margin-top      : 20px;
+}
+
+#decryptionSubmit
+{
+  margin-top      : 10px;
+}
+
+/* --------------------- ANIMATIONS --------------------- */
+.horizontalShake
+{
+  animation     : horizontalShake 0.2s;
+}
+
+@keyframes horizontalShake {
+  0% { transform: translateX(0) }
+  25% { transform: translateX(5px) }
+  50% { transform: translateX(-5px) }
+  75% { transform: translateX(5px) }
+  100% { transform: translateX(0) }
+}
+
+.flashRed
+{
+  animation     : flashRed 0.2s;
+}
+
+@keyframes flashRed {
+  0% { background-color: transparent }
+  50% { background-color: var(--negativeColorSemiTransparent) }
+  100% { background-color: transparent }
+}
+
+.flashComponentBorderRed
+{
+  animation     : flashComponentBorderRed 0.2s;
+}
+
+@keyframes flashComponentBorderRed {
+  0% { 
+    border: var(--defaultComponentBorder);
+    background-color: transparent;
+  }
+  50% { 
+    border: var(--componentBorderNegative);
+    background-color: var(--negativeColorSemiTransparent);
+  }
+  100% { 
+    border: var(--defaultComponentBorder); 
+    background-color: transparent;
+  }
+}
