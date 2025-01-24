@@ -55,6 +55,13 @@ body
   padding         : 25px 20vw;
 }
 
+.accomodationLinkBox 
+{
+  display         : flex;
+  margin-left     : 10px;
+  margin-top      : 10px;
+}
+
 #content
 {
   position: relative;
@@ -73,6 +80,7 @@ h2
 p
 {
   overflow-wrap   : break-word;
+  text-align      : left;
 }
 
 a,a:visited
@@ -339,8 +347,64 @@ button:hover,.button:hover {
 {
   position        : absolute;
   left            : calc(-65px + 3vw);
-  top             : 1140px;
+  top             : 1170px;
   transform       : rotate(8deg);
+}
+
+#photo20
+{
+  position        : absolute;
+  left            : calc(-85px + 3vw);
+  top             : 1310px;
+  transform       : rotate(-1deg);
+}
+
+#photo21
+{
+  position        : absolute;
+  right           : calc(-65px + 3vw);
+  top             : 1220px;
+  transform       : rotate(8deg);
+}
+
+#photo22
+{
+  position        : absolute;
+  right           : calc(-75px + 3vw);
+  top             : 1350px;
+  transform       : rotate(-4deg);
+}
+
+#photo23
+{
+  position        : absolute;
+  right           : calc(-60px + 3vw);
+  top             : 1490px;
+  transform       : rotate(9deg);
+}
+
+#photo24
+{
+  position        : absolute;
+  left            : calc(-60px + 3vw);
+  top             : 1460px;
+  transform       : rotate(-9deg);
+}
+
+#photo25
+{
+  position        : absolute;
+  left            : calc(-70px + 3vw);
+  top             : 1600px;
+  transform       : rotate(8deg);
+}
+
+#photo26
+{
+  position        : absolute;
+  right            : calc(-55px + 3vw);
+  top             : 1630px;
+  transform       : rotate(-3deg);
 }
 
 /* --------------------- PASSWORD DIALOG --------------------- */
