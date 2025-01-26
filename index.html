@@ -11,88 +11,74 @@
   <link rel="stylesheet" href="styles/index.css">
 
   <script src="./scripts/Utils/EncryptionUtil.js"></script>
+  <script src="./data.js"></script>
+
   <script> 
     window.onload = onLoad;
 
     const successText = "Succesfully decrypted this message";
     const encryptedText = "x3A5fKg9Hkc7/wT/4qbPmqqFaqE2e1XcwCRoggw1weRrY9WGo8TaoTmGl+iCGy2R";
     
-    const aboutText = "ezXxwocU+I0nlCdsq+gFwSoiM1FWjXmaMqzHmmGR4tR2zEgau6fjyYOFy33wDL2MXNbivaKni9apmE1CV8hdtaG+OtbWsYgzBrxMp5TTW7ifI1wkenh3FeRQZM8sjwADZDj4o8A2LJINtV2ldmRilpl38Ra3ha6SPDLrUs8ZTqCK1RlAKVvJamU4TfAp+smj9IdVX9h0cXmdGEAT4xxNeq2Fr0VUgdXpcNMgMRd41PH5ObnMjKMcIt4YvgI2qPVVwGc0CVN7azS0WTSjLvW4ZF+o+DUXFoJBPI7HM/rDZm9j2NIa2NUKOZJOrE8qvjtwmMPjIIVDcSE8YCTWIeZ+zmy7Mc9EGOtTuBYSaonuBoI3ny4ZP2Asq4lG3+a5usDkrjbMSe5HO/TfU822grPbWcrXTlXSzo+ZQuXMM7YTVimynManX6PEeIK/s1ZJBjkUphf2FlVWy1No6cU67nT/itxiVmB73mX59BTSm9spAHLXyhq7886LHO4oyRNQiu+1kZ9I6DIzRpoLngKiaPRuVVIEut5DdUvhZE50YqFkMR2DNkVeAW09yDNrBEdrXqIto4ljXOz0aiD1bZO9W7opRiNCqXBb5PCz/49FWmGzgLNssTAuKnGNuM45jdHEik9E9CPQKhr23bF7sTebeu8vwh2dNtHK2d1PqROE5lVLluWD2l50SKcxk1tyOn9QmNEeAeq6qKIaryG1WY6t3lgrmtEeizBWq/DR6sce3+ANSGMv1MdjJgie4wv9ByIfxx6NilwCre157j00OPIo7oz+6ucAjIfNMTo2eXbiRPBNTWUQHX1+W0UjEX/dBGHgrEJZeHxs3ZKej0J7VPp3w692xGCLqUgkuwS99yJHVKxeZwYaHkg+BIWUv7tEcmRWXPkaZPc6VZngz30I1JiNEX6BRIiGpcalo1pyA48prTIjniEDVovsWRO5DMDvBEAkerNDaZ+UbU2LktVQK5ElJLVximhHe2AM37bvoANjc4qG44JCkVpCbcBexvNMmx82LROcciar0IvlpxsxJ0EP8Ek83Jx0twj6jS0VXWqkLucHaeOyZNdOjkhyNtorMTn/5EkT";
-    const locationText = "TDSBiz2pGEcTjAaf+WgO500XFnYCQAzy3ImfoMOXtuzSPWotP4Do84ZEIzjSRsb6C4fFt3ViYcn5PLOglzGlfT0lodWLFfHAOUfxjOxCFbIiZdyERvl1BK9H0kPbafcisjT0ncGVUIQFSZAUX+jFrJ1bQI45Y86FnhhZIrWsYNJXymln/FnlUjPs2JDateb9kj/gbBhyIW6AEdkMvnInhF/jg5P3S2vtFblR6LI/SQ6C63IAkVHwhbjvNi7TR+/wTGhkbBviEyRB7N+WqpgmXUP8C3eOBjA0g74w7Ip5uEzjwSePaoIyQv7LRKLJsjhOJSLLxP7/Og4TrsEzcr1OvLMpOG34iS8rklHGSqte/Psjg+Z4aCsxyF6vjtkj3khNFszYW1Mu7z1yECM0i9/lNbwM65LGAH3wrZxHtg+Dbp42taI0+lNrqLxyiSRmCSpFlcg05ZnPxVHFQdzxwM/5fUvCabGE4wk1vEo8nEAc/muu9OtGHeWH7L1LtOfzQbPcpvIUSUdW1dnIUQgl5+yR/6nJE38UPYridn6kn5FP9SniGR492uWtjw4Yo1tV54ljmLEpFUnMVp/h4sPgB50RM2+ac0xlHM7YowgxM5fbSJ6sGmvduNOyQ2EG6NCitXXOR082K0hywRSRbHKKig9nEL9U/yu/pNNlv1gPWJ3EPXFUq/pFNjbifTlqIItmCcbabNhRbI3fWwMZYf5CzmDmvdSqWADXblFcrqpyZi3et/IXxLJTXu6z7Za+4dMykA6Oix6l4YFG7EsiQRL6yom2ZtlHbzQr+7W8WuWxAW7KUfSBzIqdQ8IstnPW9OU8WLgb";
-    const faqText = `
-      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
+    let contentText = `
+    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
     `;
 
-    const rsvpText = '6Xtlusnl98sXcUITcHJQQ4nTga244OcdaEJbLtg9LmGKnwi9fQ7K9V+CUao1neWlgQ5cDiuE/V5UhJLlT5/3NVLK5OVS46dcBS8J+PkZz0KpiI74Rs+pNPzN46t5aTOQwEYwFYxBBcFiHVbZvtLIYQ==';
-    const openMapText = 'IUn6eQBOsBbd7q496/m+AWKmfBefXjiuJavV+lPiFFdnHWgGVGp9BvjnbIsG8Gi1';
-    const addToGoogleCalendarText = 'htkn1kFUgNP9bT6cQo9xwuxCJ79YnSxw28h/hl954dE0htAD6RK8UKQR3jmIWdZGG83HJe0KVN8lbqgMDxWr7A0ZkDfC69lecxXJVUnHbyvLdZ2Yw58liorFu+AP7SW/xAFLK0WmDUaZ01u8SLI7KeWcKpUDxpRiSrB1rmcEq63pmJXr5s+jp9f/SfOUe8OJUGQwuwIgPG/ufuo9OFPMbNVB8A9ltpOF+98n8cOzJTW44R9AqXhNHbfTAfcVYrtLMBXvweguYQt6JJIz4ZiOvyN6fH7joJE3viLwqntWavZTNdcGsNUSQBF66IpRNhW3';
-    const addToOutlookCalendarText = 'KrmR8pAKFkiwHl79cfmqqLpXc18xLxm3CRFGr+lWEMyqvZ7bqqDHu+wQRuoW0div5dUjFcBZyUcEAj3vhDkTlYGaEyaqkvXY7i/ObsXOU8v3DxxNRqIv+UXh4tdb9i8e4/11Vo2ysPY+E21YMrrYMQ5+AyTruGGT3proPrtrSF05LdWtQAR5/Pvcy4C+5PT5SBU2Lio0EJaIr9wflsGLVXz/11z+te7XUwxnR+z2Krz92/rJRm9blF+HKwLEn0GkQUf3X3ebrAr4TwihOs0xL1wVuaBVyLpVvNJBirYI4GYxh0qYSm77Zlb02AEpkPJ2xqBoe/XwCMlZO+l5eNk7kij39Z0GuJTb+CBOt4Pm2p07OPUtXtNEn9vA7k9gkyHlDrF/byHLuO6dswW05HNjSccyM791ohgCvOTm3Cx7dG0aewpPjUi6OySe5qttOvaa';
-    const googleMapText = 'bNuhGNz1XrlObtGlOhL2gm5AbF34ovySgFwm8HRtjzdQ12B7vbA5U1yFYQCkAdc3O34AZj3P3iGpl3CBOLOchb+XAASknF/Jou4W4J0eLgeZBeRmbIh4D3CoLzIMoUL5UcyaMG9yyZkQwK3eGycZ/GaMmXLoQwqo0DzhMzz+TOA=';
-    const photoAlbumText = 'DwC1A6e+/5RnB8llt6pnoHaqbzxmVbKrSwXVKo4HweVz7kqN0qawbJm5Tqt0OUky';
-    
-    const aboutText_source = `Enter password to reveal`;
-    const locationText_source = `Enter password to reveal`;
-    const faqText_source = `Enter password to reveal`;
-    const rsvpText_source = 'https://docs.google.com/forms';
-    const openMapText_source = 'https://www.google.com/maps/place/Cambridge/';
-    const addToGoogleCalendarText_source = 'https://calendar.google.com/calendar';
-    const addToOutlookCalendarText_source = 'https://outlook.live.com/calendar';
-    const googleMapText_source = 'https://www.google.com/maps/embed/v1/place?key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8&q=Cambridge,UK';
-    const photoAlbum_source = 'https://photos.app.goo.gl';
-
-    function getElements()
-    {
-        return {
-          decryptionDialog: document.getElementById('decryptionDialog'),
-          aboutTextElement: document.getElementById('aboutText'),  
-          locationTextElement: document.getElementById('locationText'),
-          faqTextElement: document.getElementById('faqText'),
-          rsvp: document.getElementById('rsvp'),
-          openMap: document.getElementById('openMap'),
-          addToGoogleCalendar: document.getElementById('addToGoogleCalendar'),
-          addToOutlookCalendar: document.getElementById('addToOutlookCalendar'),
-          googleMap: document.getElementById('googleMap'),
-          uploadPhotos: document.getElementById('uploadPhotos'),
-        }
+    function insertEvery(str, value, nChars) {
+      let result = '';
+      while (str.length > 0) {
+        result += str.substring(0, nChars) + value;
+        str = str.substring(nChars);
+      }
+      return result;
     }
 
     async function onLoad()
     {
       document.body.style.visibility = 'visible';
 
-      const plaintext = `
-      `;
-      const key = '';
+      const decryptionField = document.getElementById('decryptionField');
+      const decryptionSubmit = document.getElementById('decryptionSubmit');
+
       if (plaintext != '' && key != '')
       {
         const ciphertext = await Encryption.encrypt(plaintext, key);
-        console.log('cipherText: '+ciphertext);
+        console.log(insertEvery(ciphertext, '\n', 100));
         //const outputText = await Encryption.decrypt(ciphertext, key);
         //console.log('outputText: '+outputText);
+
+        decryptionField.value = key;
+        onSubmitPassword();
       }
+      else
+      {
+        decryptionSubmit.addEventListener('click', onSubmitPassword);
 
-      const elements = getElements();
-
-      elements.aboutTextElement.innerHTML = aboutText_source;
-      elements.locationTextElement.innerHTML = locationText_source;
-      elements.faqTextElement.innerHTML = faqText_source;
-
-      elements.rsvp.href = rsvpText_source;
-      elements.openMap.href = openMapText_source;
-      elements.addToGoogleCalendar.href = addToGoogleCalendarText_source;
-      elements.addToOutlookCalendar.href = addToOutlookCalendarText_source;
-      elements.googleMap.src = googleMapText_source;
-      elements.uploadPhotos.href = photoAlbum_source;
-
-      const decryptionSubmit = document.getElementById('decryptionSubmit');
-      decryptionSubmit.addEventListener('click', onSubmitPassword);
-
-      const decryptionField = document.getElementById('decryptionField');
-      decryptionField.addEventListener("keydown", (e) => {
-        if (e.keyCode == 13) {
-          onSubmitPassword();
-        }
-      });
+        decryptionField.addEventListener("keydown", (e) => {
+          if (e.keyCode == 13) {
+            onSubmitPassword();
+          }
+        });
+      }
 
       //confetti
       const confettiContainer = document.getElementById('confettiContainer');
@@ -126,37 +112,9 @@
         const decryptionDialog = document.getElementById('decryptionDialog');
         decryptionDialog.style.display = 'none';
 
-        const elements = getElements();
-
-        const decryptedAboutText = await Encryption.decrypt(aboutText, decryptionField.value);
-        elements.aboutTextElement.innerHTML = decryptedAboutText;
-        elements.aboutTextElement.style.wordWrap = 'normal';
-
-        const decryptedLocationText = await Encryption.decrypt(locationText, decryptionField.value);
-        elements.locationTextElement.innerHTML = decryptedLocationText;
-        elements.locationTextElement.style.wordWrap = 'normal';
-       
-        const decryptedFaqText = await Encryption.decrypt(faqText, decryptionField.value);
-        elements.faqTextElement.innerHTML = decryptedFaqText;
-        elements.faqTextElement.style.wordWrap = 'normal';
-
-        const decryptedRsvpText = await Encryption.decrypt(rsvpText, decryptionField.value);
-        elements.rsvp.href = decryptedRsvpText;
-
-        const decryptedOpenMapText = await Encryption.decrypt(openMapText, decryptionField.value);
-        elements.openMap.href = decryptedOpenMapText;
-
-        const decryptedAddToGoogleCalendarText = await Encryption.decrypt(addToGoogleCalendarText, decryptionField.value);
-        elements.addToGoogleCalendar.href = decryptedAddToGoogleCalendarText;
-
-        const decryptedAddToOutlookCalendarText = await Encryption.decrypt(addToOutlookCalendarText, decryptionField.value);
-        elements.addToOutlookCalendar.href = decryptedAddToOutlookCalendarText;
-
-        const decryptedGoogleMapText = await Encryption.decrypt(googleMapText, decryptionField.value);
-        elements.googleMap.src = decryptedGoogleMapText;
-
-        const decryptedPhotoAlbumText = await Encryption.decrypt(photoAlbumText, decryptionField.value);
-        elements.uploadPhotos.href = decryptedPhotoAlbumText;
+        const content = document.getElementById('content');
+        const decryptedContent = await Encryption.decrypt(contentText, decryptionField.value);
+        content.innerHTML = decryptedContent;
       }
       else
       {
@@ -214,33 +172,6 @@
     <div id='confettiContainer'></div>
 
     <div id="content">
-      <h2>About</h2>
-      <p id='aboutText' ></p>
-      <div style="display:flex;justify-content:center;">
-        <a id='rsvp' class='button' target="_blank"><div class="buttonIcon" style="background-image:url(images/inventory.svg);"></div>RSVP</a>
-      </div>
-      <h2>Where/When</h2>
-      <p id='locationText' ></p>
-      <div style="display:flex;justify-content:center;">
-        <a id='openMap' class='button' target="_blank"><div class="buttonIcon" style="background-image:url(images/location.svg);"></div>View in Google maps</a>
-      </div>
-      <iframe
-        id='googleMap'
-        style="width:70%;height:40vw;border:0;margin-top:20px;border-radius:10px;"
-        loading="lazy"
-        allowfullscreen
-        referrerpolicy="no-referrer-when-downgrade"
-      >
-      </iframe>
-      <div style="display:flex;justify-content:center;padding-top:10px;">
-        <a id='addToGoogleCalendar' class='button' target="_blank" ><div class="buttonIcon" style="background-image:url(images/event.svg);"></div>Add to Google calendar</a>
-        <a id='addToOutlookCalendar' class='button' target="_blank" href=""><div class="buttonIcon" style="background-image:url(images/event.svg);"></div>Add to Outlook calendar</a>
-      </div>
-      <h2>FAQ</h2>
-      <p id='faqText' ></p>
-      <div style="display:flex;justify-content:center;padding-top:10px;">
-        <a id='uploadPhotos' class='button' target="_blank" ><div class="buttonIcon" style="background-image:url(images/addPhoto.svg);"></div>Upload/view photos of the event</a>
-      </div>
     </div>
     <div id="footer">
       <p>Website made by Josh</p>
