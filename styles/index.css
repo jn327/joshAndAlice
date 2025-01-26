@@ -110,12 +110,25 @@ button:hover,.button:hover {
 
 .buttonIcon
 {
+  display           : inline-block;
   background-size   : contain;
   background-repeat : no-repeat;
   width             : 20px;
   height            : 20px;
   margin-right      : 5px;
   filter            : var(--textColor-filter);
+}
+
+.locationIcon
+{
+  background-image    : url('./../images/location.svg');
+  display             : inline-block;
+  background-size     : contain;
+  background-repeat   : no-repeat;
+  background-position : 100% 100%;
+  width               : 20px;
+  height              : 20px;
+  filter              : var(--textColor-filter);
 }
 
 /* ---------------------  CONFETTI  --------------------- */
