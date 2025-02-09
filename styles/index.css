@@ -9,8 +9,8 @@ body
   --accentColor                   :#697565; /*#BACDD9*/ /*ABD1BE*/
   --negativeColor                 :#BF3C30;
   --negativeColorSemiTransparent  :#BF3C3011;
-  --componentBackgroundColor      : transparent; /*#F2EDEB*/
-  --componentBackgroundColorHover : transparent; /*#F2EDEB*/
+  --componentBackgroundColor      : #FBF8EF; /*#F2EDEB*/
+  --componentBackgroundColorHover : #FBF8EF; /*#F2EDEB*/
   --fontSizeSmall                 : 16px;
   --defaultComponentPadding       : 5px 10px;
   --defaultComponentBorder        : 2px solid var(--accentColor);
@@ -62,17 +62,21 @@ body
 
 h1 
 {
-  margin-top      : 25px;
+  margin-top      : 10px;
+  margin-bottom   : 10px;
 }
 
 h2 
 {
-  margin-top      : 40px;
+  margin-top      : 30px;
+  margin-bottom   : 5px;
 }
 
 p
 {
-  text-align      : left;
+  text-align      : center;
+  margin-top      : 5px;
+  margin-bottom   : 5px;
 }
 
 a,a:visited
@@ -134,9 +138,13 @@ button:hover,.button:hover {
   position      : absolute;
   box-shadow    : 0 3px 10px rgba(0,0,0,0.5);
   align-self    : center;
-  top           : calc(-40vw - 10px);
+  left: 50%;
+  transform: translate(-50%, -100%);
+  top           : -10px;
   width         : 40vw;
+  max-width     : 300px;
   height        : 40vw;
+  max-height    : 300px;
   border        : 3px solid white;
   border-radius : 10px;
 }
@@ -189,7 +197,6 @@ button:hover,.button:hover {
   margin-top      : -50px;
   background      : #fff;
   padding         : 3px;
-  height          : 40vw;
   box-shadow      : 0 3px 10px rgba(0,0,0,0.3);
   transform       : rotate(-2deg);
 }
@@ -199,17 +206,17 @@ button:hover,.button:hover {
   background-size     : cover;
   background-position : 50% 65%;
   width               : 100%;
-  height              : 100%;
+  height              : 40vw;
 }
 
 .polaroid
 {
   background      : #fff;
   padding         : 3px;
-  padding-bottom  : 20px;
+  padding-bottom  : 18px;
   box-shadow      : 0 3px 10px rgba(0,0,0,0.2);
-  width           : 110px;
-  height          : 125px;
+  width           : calc(30px + 10vw);
+  height          : calc(50px + 10vw);
 }
 
 .polaroidImage
@@ -231,210 +238,250 @@ button:hover,.button:hover {
 
 #photo1
 {
-  position            : absolute;
-  right               : calc(-60px + 3vw);
-  top                 : 25px;
-  transform           : rotate(-15deg);
+  position         : absolute;
+  right            : -15px;
+  top              : calc(25px + 0vw);
+  transform        : rotate(-15deg);
 }
 
 #photo2
 {
-  position            : absolute;
-  right               : calc(-75px + 3vw);
-  top                 : 150px;
-  transform           : rotate(20deg);
+  position         : absolute;
+  right            : -30px;
+  top              : calc(150px + 2vw);
+  transform        : rotate(20deg);
 }
 
 #photo3
 {
-  position            : absolute;
-  right               : calc(-55px + 3vw);
-  top                 : 280px;
-  transform           : rotate(-8deg);
+  position         : absolute;
+  right            : -10px;
+  top              : calc(280px + 4vw);
+  transform        : rotate(-8deg);
 }
 
 #photo4
 {
-  position            : absolute;
-  right               : calc(-65px + 3vw);
-  top                 : 420px;
-  transform           : rotate(9deg);
+  position         : absolute;
+  right            : -20px;
+  top              : calc(420px + 6vw);
+  transform        : rotate(9deg);
 }
 
 #photo5
 {
   position        : absolute;
-  right           : calc(-55px + 3vw);
-  top             : 535px;
+  right           : -10px;
+  top             : calc(535px + 8vw);
   transform       : rotate(-4deg);
 }
 
 #photo6
 {
   position        : absolute;
-  right           : calc(-65px + 3vw);
-  top             : 670px;
+  right           : -20px;
+  top             : calc(670px + 10vw);
   transform       : rotate(8deg);
 }
 
 #photo7
 {
   position        : absolute;
-  right           : calc(-60px + 3vw);
-  top             : 800px;
+  right           : -15px;
+  top             : calc(800px + 12vw);
   transform       : rotate(-12deg);
 }
 
 #photo8
 {
   position        : absolute;
-  right           : calc(-55px + 3vw);
-  top             : 940px;
+  right           : -10px;
+  top             : calc(940px + 14vw);
   transform       : rotate(2deg);
 }
 
 #photo9
 {
   position        : absolute;
-  right           : calc(-55px + 3vw);
-  top             : 1080px;
+  right           : -10px;
+  top             : calc(1080px + 16vw);
   transform       : rotate(-9deg);
 }
 
 #photo10
 {
   position        : absolute;
-  left            : calc(-45px + 3vw);
-  top             : 30px;
+  left            : 0px;
+  top             : calc(30px + 0vw);
   transform       : rotate(3deg);
 }
 
 #photo11
 {
   position        : absolute;
-  left            : calc(-60px + 3vw);
-  top             : 155px;
+  left            : -15px;
+  top             : calc(155px + 2vw);
   transform       : rotate(-6deg);
 }
 
 #photo12
 {
   position        : absolute;
-  left            : calc(-55px + 3vw);
-  top             : 300px;
+  left            : -10px;
+  top             : calc(300px + 4vw);
   transform       : rotate(3deg);
 }
 
 #photo13
 {
   position        : absolute;
-  left            : calc(-60px + 3vw);
-  top             : 410px;
+  left            : -15px;
+  top             : calc(410px + 6vw);
   transform       : rotate(-8deg);
 }
 
 #photo14
 {
   position        : absolute;
-  left            : calc(-55px + 3vw);
-  top             : 520px;
+  left            : -10px;
+  top             : calc(520px + 8vw);
   transform       : rotate(5deg);
 }
 
 #photo15
 {
   position        : absolute;
-  left            : calc(-55px + 3vw);
-  top             : 660px;
+  left            : -10px;
+  top             : calc(660px + 10vw);
   transform       : rotate(10deg);
 }
 
 #photo16
 {
   position        : absolute;
-  left            : calc(-65px + 3vw);
-  top             : 780px;
+  left            : -20px;
+  top             : calc(780px + 12vw);
   transform       : rotate(-10deg);
 }
 
 #photo17
 {
   position        : absolute;
-  left            : calc(-65px + 3vw);
-  top             : 900px;
+  left            : -20px;
+  top             : calc(900px + 14vw);
   transform       : rotate(4deg);
 }
 
 #photo18
 {
   position        : absolute;
-  left            : calc(-55px + 3vw);
-  top             : 1020px;
+  left            : -10px;
+  top             : calc(1020px + 16vw);
   transform       : rotate(-3deg);
 }
 
 #photo19
 {
   position        : absolute;
-  left            : calc(-65px + 3vw);
-  top             : 1170px;
+  left            : -20px;
+  top             : calc(1170px + 18vw);
   transform       : rotate(8deg);
 }
 
 #photo20
 {
   position        : absolute;
-  left            : calc(-85px + 3vw);
-  top             : 1310px;
+  left            : -40px;
+  top             : calc(1310px + 20vw);
   transform       : rotate(-1deg);
 }
 
 #photo21
 {
   position        : absolute;
-  right           : calc(-65px + 3vw);
-  top             : 1220px;
+  right           : -20px;
+  top             : calc(1220px + 18vw);
   transform       : rotate(8deg);
 }
 
 #photo22
 {
   position        : absolute;
-  right           : calc(-75px + 3vw);
-  top             : 1350px;
+  right           : -30px;
+  top             : calc(1350px + 20vw);
   transform       : rotate(-4deg);
 }
 
 #photo23
 {
   position        : absolute;
-  right           : calc(-60px + 3vw);
-  top             : 1490px;
+  right           : -15px;
+  top             : calc(1490px + 22vw);
   transform       : rotate(9deg);
 }
 
 #photo24
 {
   position        : absolute;
-  left            : calc(-60px + 3vw);
-  top             : 1460px;
+  left            : -15px;
+  top             : calc(1460px + 22vw);
   transform       : rotate(-9deg);
 }
 
 #photo25
 {
   position        : absolute;
-  left            : calc(-70px + 3vw);
-  top             : 1600px;
+  left            : -25px;
+  top             : calc(1600px + 24vw);
   transform       : rotate(8deg);
 }
 
 #photo26
 {
   position        : absolute;
-  right            : calc(-55px + 3vw);
-  top             : 1630px;
+  right           : -10px;
+  top             : calc(1630px + 24vw);
   transform       : rotate(-3deg);
+}
+
+#photo27
+{
+  position        : absolute;
+  left            : -20px;
+  top             : calc(1730px + 26vw);
+  transform       : rotate(-3deg);
+}
+
+#photo28
+{
+  position        : absolute;
+  left            : -20px;
+  top             : calc(1870px + 28vw);
+  transform       : rotate(6deg);
+}
+
+#photo29
+{
+  position        : absolute;
+  left            : -5px;
+  top             : calc(2020px + 30vw);
+  transform       : rotate(-8deg);
+}
+
+#photo30
+{
+  position        : absolute;
+  right           : -5px;
+  top             : calc(1790px + 26vw);
+  transform       : rotate(-5deg);
+}
+
+#photo31
+{
+  position        : absolute;
+  right           : -10px;
+  top             : calc(1930px + 28vw);
+  transform       : rotate(3deg);
 }
 
 /* --------------------- PASSWORD DIALOG --------------------- */
