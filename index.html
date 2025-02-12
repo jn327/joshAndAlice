@@ -293,19 +293,20 @@ Tj5DaK3vBCBVhjvuxmv9Z8I7NfHmt9HdnwB39jB4uK1NJwwvA6DHv3UDzT7I5g4/3QohAD8DGaU5GkVT
         setTimeout(() => decryptionDialogHeader.classList.toggle("horizontalShake", false), 300);
       }
 
-      async function loadImage(elementID, src)
+      async function loadImage(elementID, src, backgroundSize = '75%')
       {
         let img = new Image();
         let element = document.getElementById(elementID);
-        element.parentElement.style.visibility = 'hidden';
+        element.style.backgroundImage = "url('images/Loading_icon.gif')";
+        element.style.backgroundSize = backgroundSize;
         img.onload = function() {
-          element.parentElement.style.visibility = 'visible';
           element.style.backgroundImage = "url('" + img.src + "')";
+          element.style.backgroundSize = 'cover'
         };
         img.src = 'images/'+src+'.jpg';
       }
 
-      await loadImage('headerPhoto', "20230611_175005");
+      await loadImage('headerPhoto', "20230611_175005", "25%");
       await loadImage('photoImage1', "20230513_152654");
       await loadImage('photoImage2', "20220723_172128");
       await loadImage('photoImage3', "PXL_20240708_065816828");
