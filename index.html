@@ -293,39 +293,44 @@ Tj5DaK3vBCBVhjvuxmv9Z8I7NfHmt9HdnwB39jB4uK1NJwwvA6DHv3UDzT7I5g4/3QohAD8DGaU5GkVT
         setTimeout(() => decryptionDialogHeader.classList.toggle("horizontalShake", false), 300);
       }
 
-      async function loadImage(elementID, src, backgroundSize = '75%')
+      const loadImage = function (elementID, src, backgroundSize = '75%')
       {
-        let img = new Image();
-        let element = document.getElementById(elementID);
-        element.style.backgroundImage = "url('images/Loading_icon.gif')";
-        element.style.backgroundSize = backgroundSize;
-        img.onload = function() {
-          element.style.backgroundImage = "url('" + img.src + "')";
-          element.style.backgroundSize = 'cover'
-        };
-        img.src = 'images/'+src+'.jpg';
+        return new Promise(function (resolve, reject) {
+          const img = new Image();
+          const element = document.getElementById(elementID);
+          element.style.backgroundImage = "url('images/Loading_icon.gif')";
+          element.style.backgroundSize = backgroundSize;
+          img.onload = function() {
+            element.style.backgroundImage = "url('" + img.src + "')";
+            element.style.backgroundSize = 'cover';
+            resolve();
+          };
+          img.src = 'images/'+src+'.jpg';
+        });
       }
 
       await loadImage('headerPhoto', "20230611_175005", "25%");
       await loadImage('photoImage1', "20230513_152654");
-      await loadImage('photoImage2', "20220723_172128");
-      await loadImage('photoImage3', "PXL_20240708_065816828");
-      await loadImage('photoImage4', "20230613_163021");
-      await loadImage('photoImage5', "PXL_20231124_133910647");
-      await loadImage('photoImage6', "PXL_20240614_175004575");
-      await loadImage('photoImage7', "PXL_20240712_090948734");
-      await loadImage('photoImage8', "PXL_20240710_124608957");
-      await loadImage('photoImage9', "PXL_20240714_043319121");
       await loadImage('photoImage10', "IMG-20230602-WA0002");
       await loadImage('photoImage11', "20230620_195615");
+      await loadImage('photoImage2', "20220723_172128");
+      await loadImage('photoImage3', "PXL_20240708_065816828");
       await loadImage('photoImage12', "20221023_153542");
       await loadImage('photoImage13', "20230619_112548");
+      await loadImage('photoImage4', "20230613_163021");
+      await loadImage('photoImage5', "PXL_20231124_133910647");
       await loadImage('photoImage14', "PXL_20240711_124517070");
       await loadImage('photoImage15', "PXL_20240712_051523311");
+      await loadImage('photoImage6', "PXL_20240614_175004575");
+      await loadImage('photoImage7', "PXL_20240712_090948734");
       await loadImage('photoImage16', "PXL_20240511_115149538");
       await loadImage('photoImage17', "PXL_20240613_100115969");
+      await loadImage('photoImage8', "PXL_20240710_124608957");
+      await loadImage('photoImage9', "PXL_20240714_043319121");
       await loadImage('photoImage18', "PXL_20240714_045737237");
       await loadImage('photoImage19', "PXL_20240818_130441568");
+      await loadImage('photoImage16', "PXL_20240511_115149538");
+      await loadImage('photoImage17', "PXL_20240613_100115969");
       await loadImage('photoImage20', "212341_aa046eb3");
       await loadImage('photoImage21', "212244_c832a3a7");
       await loadImage('photoImage22', "212445_a2101a82");
